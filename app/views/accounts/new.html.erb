@@ -1,0 +1,18 @@
+<h2>New Account</h2>
+
+<%= form_for @account do |f|%>
+
+	
+
+	<div>
+		費用：
+		<%= f.text_field :expense %>
+	</div>
+
+	<div>
+		類別：
+		<%= f.select :title, options_for_select(["Select One", "home", "personal", "car", "shopping", "food"],:disabled => ["Select One"])%>
+	</div>
+
+<%= f.submit%>
+<%end%>

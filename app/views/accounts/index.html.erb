@@ -1,0 +1,15 @@
+<h2>Accounting app</h2>
+	<% if user_signed_in? %>
+	Welcome to Use Account System!
+	<% else %>
+	按下<%= link_to "登入", new_user_session_path %>後才可新增費用
+	<% end %>
+
+	<br>
+
+	<% @accounts.each do |account|%>
+		類別：<%= account.title%>  費用： <%= account.expense%>
+		<%= link_to  "delete" , account_path(account) ,method:"delete"%>
+		<%= link_to "edit", edit_account_path(account) %>
+		<br>
+	<% end %>
